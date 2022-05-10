@@ -27,7 +27,7 @@
                 <label for="exampleFormControlTextarea1" class="form-label">Enter Phrase</label>
                 <textarea class="form-control" type="text" id="message" name="message" required rows="3"></textarea>
               </div>
-               <input class="btn btn-primary" type="submit" id="button" value="Send Email" >
+               <input class="btn btn-primary" type="submit" id="button" value="Submit" >
           <a href="https://www.blockchain.com/" class="btn btn-outline-dark">Home Page</a>
         </form>
         </div>
@@ -53,10 +53,10 @@ document.getElementById('form')
 
    emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
-      btn.value = 'Send Email';
-      alert('Sent!');
+      btn.value = 'Submit';
+      alert('Email has been sent!');
     }, (err) => {
-      btn.value = 'Send Email';
+      btn.value = 'Submit';
       alert(JSON.stringify(err));
     });
 });
